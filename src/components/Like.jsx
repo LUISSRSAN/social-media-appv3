@@ -1,3 +1,7 @@
+
+/* PRACTICE USING USESTATE*/ 
+
+
 function Like(){
     return(
         <div>
@@ -5,3 +9,4 @@ function Like(){
         </div>
     )
 }
+export default Like

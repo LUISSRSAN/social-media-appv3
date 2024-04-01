@@ -1,6 +1,6 @@
 /*PRACTICE USING USESTATE */ 
 
-import React from 'react';
+import React,{props} from 'react';
 
 function Comment(props){
     return(
