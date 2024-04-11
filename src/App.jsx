@@ -1,30 +1,29 @@
 
+
 import React, { useState } from 'react';
 import CreatePostForm from './components/CreatePostForm';
-import Post from './components/Post';
-
+import Feed from "./components/Feed";
+import style from "./modules/app.module.css";
 function App(){
   const [posts,setPosts] = useState([]);
 
 
 
 const handleNewSubmission = (data) =>{
-  data.preventDefault();
-/*postData = document.getElementById('post-headline').value;*/
-console.log("successfull");
-setPosts([...posts,data]);
-}
+  setPosts([...posts, data]);
+};
+
+
 
 
     return(
-    <div>
-      <h1>Fakebook!</h1>
-      <CreatePostForm onNewSubmit={handleNewSubmission}/>
-     
-      {/* Feed */}
-     
-      <Post content={posts}/>
-     
+    <div className={style.body}>
+      <h1 className={style.header}>Fakebook!</h1>
+      <CreatePostForm  id="outlined-basic"  variant="outlined" onNewSubmit={handleNewSubmission}/>
+      
+      <Feed content={posts}/>
+ 
+
     </div>
     )
  }

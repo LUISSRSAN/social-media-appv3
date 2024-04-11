@@ -1,10 +1,10 @@
 /*PRACTICE USING USESTATE */ 
 
-import React,{props} from 'react';
-
+import React from 'react';
+import commentStyle from '../modules/Comment.module.css';
 function Comment(props){
     return(
-        <div>
+        <div className={commentStyle.textStyle}>
         <p>{props.content}</p>
         </div>
 )

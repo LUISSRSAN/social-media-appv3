@@ -1,29 +1,49 @@
 
 /*PRACTICE USING USESTATE*/
 import { useState } from "react";
-
-function CreatePostForm(props,{handleNewSubmission}){
+import styles from "../modules/CreatePostForm.module.css";
+function CreatePostForm({onNewSubmit}){
 
 const [state,setState] = useState('');
 
+
+let [postTitle,setPostTitle] = useState('');
+let [postMessage,setPostMessage]= useState('');
+
+
 const handleSubmit= (event) =>{
   event.preventDefault();
-let data = document.getElementById('post-headline').value;
-console.log(data);
-props.onNewSubmit();
-setState(data);
 
+if(postTitle ==="" || postMessage ===""){
+return ("Fields Required");
 }
+else {
+setPostTitle(event.target.value);
+setPostMessage(event.target.value);
+
+
+  onNewSubmit({
+    title:postTitle,
+    message:postMessage
+  });
+  console.log(postTitle,postMessage);
+  // reset the form fields
+  setPostTitle('');
+  setPostMessage('');
+}
+}
+
+
+
     return (
-      <div>
+      <div className={styles.formContainer}>
 
         <h1>Create Post </h1>
-        <form onSubmit={()=>handleNewSubmission(handleSubmit)}>
-            <input id='post-headline' type="text"></input>
+        <form onSubmit={handleSubmit}>
+            <input  onChange ={event => setPostTitle(event.target.value)} type="text" value={postTitle}/>
             <br/>
-            <textarea id='post-message'></textarea>
-            <br></br>
-            <input type="submit"></input>
+            <textarea onChange={event =>setPostMessage(event.target.value)} value={postMessage} ></textarea>
+            <input  type="submit" />
         </form>
         
       </div>
