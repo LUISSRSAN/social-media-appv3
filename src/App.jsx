@@ -8,16 +8,11 @@ import Navbar from './components/Navbar';
 import Profile from "./components/Profile";
 import style from "./modules/app.module.css";
 
-import { createBrowserRouter } from "react-router-dom";
+
 function App(){
   const [posts,setPosts] = useState([]);
 
-const router = createBrowserRouter([
-  {
-  path:"/",
-  element:<div>Hello World!</div>
-},
-]);
+
 
 const handleNewSubmission = (data) =>{
   setPosts([...posts, data]);
