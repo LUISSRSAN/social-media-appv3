@@ -1,0 +1,36 @@
+
+body{
+    padding:0px;
+}
+
+ul{
+    padding:0;
+}
+
+h1{
+    display:inline;
+    text-align:right;
+}
+.navbar{
+    text-decoration:none;
+    display:flex;
+   
+    justify-content:start;
+    list-style:none;
+    background-color:grey;
+    padding:0;
+}
+
+
+
+.navbar li
+{
+    list-style:none;
+    font-size:60px;
+    display:inline;
+    
+    padding:20px;
+ 
+  
+}
+
