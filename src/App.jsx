@@ -23,14 +23,14 @@ const handleNewSubmission = (data) =>{
 
         return(
           <div className={style.body}>
-            <BrowserRouter>
+           
               <Navbar/>
               <CreatePostForm  onNewSubmit={handleNewSubmission}/>
               <Routes>
                 <Route path="/" element={<Feed content={posts}/>}/>
                 <Route path="/profile" element={<Profile content={posts}/>}/>
               </Routes>
-            </BrowserRouter>
+         
           </div>
     )
  }
