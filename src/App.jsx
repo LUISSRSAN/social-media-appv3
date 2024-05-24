@@ -27,8 +27,8 @@ const handleNewSubmission = (data) =>{
               <Navbar/>
               <CreatePostForm  onNewSubmit={handleNewSubmission}/>
               <Routes>
-                <Route path="/" element={<Feed content={posts}/>}/>
-                <Route path="/profile" element={<Profile content={posts}/>}/>
+             <Feed content={posts}/>/>
+              <Profile content={posts}/>
               </Routes>
          
           </div>
